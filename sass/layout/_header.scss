@@ -1,0 +1,96 @@
+@use "../abstracts/mixins" as *;
+@use "../abstracts/variables" as *;
+@use "../base/typography" as *;
+
+.header {
+  &-top {
+    z-index: 1;
+    @include flex;
+    padding: 2em 0;
+
+    .logo {
+      max-width: 100%;
+    }
+
+    &__toggle-btn {
+        display: flex;
+        align-items: center;
+      border: none;
+      background-color: inherit;
+      cursor: pointer;
+      .toggle-img {
+        width: 50%;
+        
+      }
+      .light {
+        display: none;
+      }
+    }
+    .nav-list {
+      display: flex;
+      
+      &__link {
+        list-style-type: none;
+        font-size: $nav-font-size;
+        font-weight: $nav-font-weight;
+        text-transform: uppercase;
+        padding-left: 3em;
+        
+        a {
+          text-decoration: none;
+          color: $nav-color;
+          transition: color 0.2s ease-in-out;
+
+          &:hover {
+            color:#000000;
+          }
+        }
+      }
+     
+    }
+  }
+
+  //SCROLL ANIMATION
+  #active{
+    transition: background-color 1s ease-in-out;
+    background-color: inherit;
+  }
+
+  //HERO
+  &-hero {
+    background-image: url(/images/image-hero-coffeepress.a7cf4f45.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: .5em;
+    padding: 5em;
+    &__heading {
+      font-size: $heading-font-size;
+      font-weight: $heading-font-weight;
+      font-family: $heading-font-family;
+      color: $heading-color;
+      display: flex;
+      flex-direction: column;
+    }
+    &__paragraph {
+     @include paragrph-txt;
+      padding: 2em 0;
+    
+    }
+    .created-btn{
+        @include btn;
+
+        &:hover{
+            @include btn-hover;
+            
+        }
+    }
+  }
+
+  &__about{
+    background-image: url(/images/image-hero-whitecup.3aff7e6f.jpg);
+  }
+  &__plan{
+    background-image: url(/images/image-hero-blackcup.ab6397b1.jpg);
+    padding: 7em 5em;
+  }
+}

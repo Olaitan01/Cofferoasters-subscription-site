@@ -1,0 +1,397 @@
+@use "../abstracts/mixins" as *;
+@use "../abstracts/variables" as *;
+@use "../base/typography" as *;
+
+//PRODUCT
+.collection {
+  position: relative;
+  padding: 10em 0;
+  &__title-container {
+    width: 100%;
+    background: linear-gradient(to top, $title-color, $paragraph-color);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    position: absolute;
+    left: 0;
+    top: 3em;
+    .title {
+      font-size: 10rem;
+      text-align: center;
+      text-transform: lowercase;
+      font-weight: 900;
+    }
+  }
+  &__products-list {
+    z-index: 1;
+    position: relative;
+    @include flex;
+    text-align: center;
+
+    &__description {
+      .product-name {
+        font-size: $product-heading-size;
+        color: $product-heading-color;
+        font-weight: 700;
+        padding: 1em 0;
+      }
+      .product-description {
+        width: 80%;
+        margin: auto;
+        font-size: $paragraph-color;
+        color: $paragraph-color;
+        font-weight: $paragraph-font-weight;
+        line-height: $paragraph-line-height;
+      }
+    }
+  }
+}
+
+//BENEFITS
+.benfits-container {
+  background-color: $bg-footer;
+  text-align: center;
+  padding: 2em 0 20em;
+  margin-bottom: 15em;
+  border-radius: 0.5em;
+  position: relative;
+  &__heading {
+    font-size: $benefits-heading-font-size;
+    color: $heading-color;
+    font-family: $heading-font-family;
+    font-weight: $heading-font-weight;
+    line-height: $heading-line-height;
+  }
+
+  &__paragraph {
+    @include paragrph-txt;
+  }
+  .benefits {
+    @include flex;
+    width: 100%;
+    position: absolute;
+    top: 15em;
+    &__card {
+      background-color: $cards-color;
+      border-radius: 0.5em;
+      padding: 4em 0 2em;
+      width: 100%;
+      margin: 0 1em;
+
+      &-title {
+        color: $heading-color;
+        font-size: 2rem;
+        padding: 1em 0 0.3em;
+        line-height: $heading-line-height;
+        font-family: $heading-font-family;
+      }
+      &-paragraph {
+        @include paragrph-txt;
+      }
+      .last-child {
+        padding-bottom: 1em;
+      }
+    }
+  }
+}
+
+//WORKS
+.works {
+  &__title {
+    font-size: 1.5rem;
+    color: $paragraph-color;
+    font-family: $heading-font-family;
+    font-weight: 700;
+  }
+  .rounded-line {
+    display: flex;
+    justify-content: space-between;
+    width: 70%;
+    padding: 5em 0;
+    position: relative;
+  }
+  &__rounded {
+    border: 0.1em solid $cards-color;
+    padding: 1em;
+    border-radius: 50%;
+    width: 10px;
+    height: 10px;
+
+    & + &::before {
+      content: "";
+      border-bottom: 0.1em solid $number-color;
+      width: 43.2%;
+      position: absolute;
+      height: 5%;
+      transform: translate(-22.1em, -0.5em);
+      display: inline-block;
+      gap: 1em;
+    }
+  }
+  //HOW IT WORKS
+  &__wrapper {
+    @include flex;
+  }
+  &__card {
+    width: 100%;
+  }
+  &__num-heading {
+    color: $number-color;
+    font-size: $heading-font-size;
+    font-family: $heading-font-family;
+  }
+  &__heading {
+    @include heading;
+  }
+  &__paragraph {
+    @include paragrph-txt;
+    width: 76.8%;
+    padding-bottom: 5em;
+  }
+
+  .create-btn {
+    @include btn;
+
+    &:hover {
+      @include btn-hover;
+    }
+  }
+}
+
+//Create Plan steps
+.works-plan {
+  background-image: url(/images/bg-steps.171b3b4a.png);
+  background-size: cover;
+  border-radius: 0.5em;
+  margin: 10em 0;
+  padding: 0 1em;
+
+  .heading,
+  .paragraph {
+    color: $heading-color;
+  }
+}
+.works__rounded {
+
+
+  & + &::before {
+    content: "";
+    border-bottom: 0.1em solid $number-color;
+    width: 48%;
+    position: absolute;
+    height: 5%;
+    transform: translate(-26em, -0.5em);
+    display: inline-block;
+    gap: 1em;
+  }
+}
+
+//ABOUT PAGE STYLING
+.commitment {
+  @include flex;
+  padding: 8em 2em;
+  &-img {
+    border-radius: 0.5em;
+  }
+  &__heading {
+    @include heading;
+  }
+  &__description {
+    @include paragrph-txt;
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.quality-wrapper {
+  background-image: url(/images/bg-quality.2162ed6a.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding: 6em 5em 10em;
+  position: relative;
+  margin: 5em 0;
+  .quality__heading {
+    color: $heading-color;
+    font-size: 2.5rem;
+    font-family: $heading-font-family;
+    font-weight: $heading-font-weight;
+  }
+
+  .quality__paragraph {
+    @include paragrph-txt;
+    padding-top: 1.5em;
+  }
+  .quality__img {
+    position: absolute;
+    right: 1em;
+    top: -6em;
+
+    img {
+      border-radius: 0.5em;
+    }
+  }
+}
+
+.headquarters {
+  padding: 5em 2em;
+  .title {
+    @include heading;
+  }
+  .location {
+    @include flex;
+    width: 70%;
+    &__address {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .country-name {
+      @include heading;
+    }
+    .address {
+      @include paragrph-txt;
+    }
+  }
+}
+
+.steps {
+  @include flex;
+  justify-content: space-between;
+//   outline: 0.1em dashed red;
+  width: 85%;
+  margin: auto;
+  &-indicator {
+    align-self: baseline;
+  }
+  &__track {
+    @include flex;
+    font-family: $heading-font-family;
+    font-size: 1.5rem;
+    font-weight: $heading-font-weight;
+    color: $paragraph-color;
+
+    .num {
+      color: $cards-color;
+    }
+  }
+  &__title {
+    @include flex;
+    // border: 0.1em solid red;
+    align-self: self-end;
+    padding: 1em 0;
+    width: 80%;
+
+    .arrow-icon{
+        transition: transform .5s ease-in-out;
+    }
+  }
+
+  .indicator {
+    padding: 1em 0;
+    position: relative;
+    width: 120%;
+
+    &::after {
+      content: "";
+      border-bottom: 0.05em solid $paragraph-color;
+      position: absolute;
+      flex-direction: column;
+      width: 100%;
+      display: block;
+      height: 0.5em;
+      bottom: 0;
+    }
+  }
+  .summary {
+    // border: 0.1em solid green;
+    width: 80%;
+    align-self: flex-end;
+    padding: 3em;
+    color: $heading-color;
+    background: url(/images/bg-order-summary.bc8b393f.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 0.5em;
+    &__title {
+      font-size: 1rem;
+      font-family: $global-font-family;
+      font-weight: $paragraph-font-weight;
+      line-height: $heading-line-height;
+
+    }
+   
+    
+    .style{
+        color: $cards-color;
+    }
+  }
+}
+.plan-option-container{
+    // border: .1em solid yellow;
+    display: flex;
+    justify-content: right;
+    width: 80%;
+    align-self: flex-end;
+    display: none;
+    animation: fade 1s ease-in-out;
+    transition: height 0.5s ease-in-out
+}
+.plan-wrapper{
+    @include flex;
+    font-size: 1rem;
+    width: 100%;
+    align-items: end;
+
+    .product__plan{
+        // border: .1em solid red;
+        width: 50%;
+        padding: 2em 1em 3em;
+        margin: 1em;
+        border-radius: .5em;
+        background-color: $plan-card;
+        transition: background-color .2s ease-in-out;
+        
+        
+        &:hover{
+            background-color: $number-color;
+        }
+        &--title{
+            color:$product-heading-color;
+
+          
+        }
+        &--description{
+            font-family: $global-font-family;
+            @include paragrph-txt;
+            padding: 1em 0;
+            color:$product-heading-color;
+        }
+
+    }
+}
+.plans__option {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  cursor: pointer;
+  
+}
+
+@-webkit-keyframes fade{
+    0%{
+     height: 0;
+     opacity: .5;
+    }
+    100%{
+        height: 100vh;
+        opacity: 1;
+    }
+}
+@keyframes fade{
+    0%{
+        height: 0;
+       }
+       100%{
+           height: 30vh;
+       }
+     
+}

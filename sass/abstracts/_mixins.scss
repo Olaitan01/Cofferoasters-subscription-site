@@ -1,0 +1,50 @@
+@use "../abstracts/variables" as *;
+@use "../base/typography" as *;
+
+@mixin flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@mixin btn {
+  font-size: $button-font-size;
+  font-family: $heading-font-family;
+  font-weight: 700;
+  color: $heading-color;
+  background-color: $cards-color;
+  padding: 1em 1.5em;
+  border-radius: 0.5em;
+  border: none;
+  outline: none;
+}
+
+@mixin btn-hover {
+  filter: brightness(140%);
+  transition: filter 0.5s ease-in-out;
+  cursor: pointer;
+}
+
+@mixin paragrph-txt {
+  display: flex;
+  flex-direction: column;
+  font-size: $paragraph-font-size;
+  color: $paragraph-color;
+  font-weight: $paragraph-font-weight;
+  line-height: $paragraph-line-height;
+}
+
+@mixin heading {
+  font-size: 2rem;
+  font-family: $heading-font-family;
+  color: $product-heading-color;
+  display: flex;
+  flex-direction: column;
+  padding: 1em 0;
+}
+
+@mixin screen-370 {
+  @media (max-width: rem(370)) {
+    @content;
+  }
+}
