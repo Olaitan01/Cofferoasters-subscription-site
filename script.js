@@ -139,3 +139,22 @@ for(let i=0;i<planBtn.length;i++){
 
 
 // Select a card for each choice
+for(let i=0;i<planCards.length;i++){
+    let title=planCards[i].querySelector(".product__plan--title").innerText
+    planCards[i].addEventListener("click",()=>{
+        if(planCards[i].querySelector(".product__plan--title").classList.contains("brewed-type")){
+            document.querySelector(".drink-style").innerText=title
+        }else if(planCards[i].querySelector(".product__plan--title").classList.contains("coffee-type")){
+            document.querySelector(".type").innerText=title
+        }else if(planCards[i].querySelector(".product__plan--title").classList.contains("coffee-quantity")){
+            document.querySelector(".quantity").innerText=title
+        }else if(planCards[i].querySelector(".product__plan--title").classList.contains("coffee-process")){
+            document.querySelector(".grind").innerText=title
+        }else{
+            document.querySelector(".delivery").innerText=title 
+        }
+      
+    })
+
+}
+
