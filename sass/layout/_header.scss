@@ -13,14 +13,13 @@
     }
 
     &__toggle-btn {
-        display: flex;
-        align-items: center;
+      display: flex;
+      align-items: center;
       border: none;
       background-color: inherit;
       cursor: pointer;
       .toggle-img {
         width: 50%;
-        
       }
       .light {
         display: none;
@@ -28,30 +27,29 @@
     }
     .nav-list {
       display: flex;
-      
+
       &__link {
         list-style-type: none;
         font-size: $nav-font-size;
         font-weight: $nav-font-weight;
         text-transform: uppercase;
         padding-left: 3em;
-        
+
         a {
           text-decoration: none;
           color: $nav-color;
           transition: color 0.2s ease-in-out;
 
           &:hover {
-            color:#000000;
+            color: #000000;
           }
         }
       }
-     
     }
   }
 
   //SCROLL ANIMATION
-  #active{
+  #active {
     transition: background-color 1s ease-in-out;
     background-color: inherit;
   }
@@ -61,7 +59,7 @@
     background-image: url(/images/image-hero-coffeepress.a7cf4f45.jpg);
     background-size: cover;
     background-repeat: no-repeat;
-    border-radius: .5em;
+    border-radius: 0.5em;
     padding: 5em;
     &__heading {
       font-size: $heading-font-size;
@@ -72,24 +70,22 @@
       flex-direction: column;
     }
     &__paragraph {
-     @include paragrph-txt;
+      @include paragrph-txt;
       padding: 2em 0;
-    
     }
-    .created-btn{
-        @include btn;
+    .created-btn {
+      @include btn;
 
-        &:hover{
-            @include btn-hover;
-            
-        }
+      &:hover {
+        @include btn-hover;
+      }
     }
   }
 
-  &__about{
+  &__about {
     background-image: url(/images/image-hero-whitecup.3aff7e6f.jpg);
   }
-  &__plan{
+  &__plan {
     background-image: url(/images/image-hero-blackcup.ab6397b1.jpg);
     padding: 7em 5em;
   }

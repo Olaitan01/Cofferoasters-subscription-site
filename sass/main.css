@@ -492,6 +492,7 @@
 }
 .plan-wrapper .product__plan--title {
   color: rgb(51, 61, 75);
+  padding: 1em 0;
 }
 .plan-wrapper .product__plan--description {
   font-family: "Barlow", sans-serif;
@@ -503,6 +504,9 @@
   line-height: 1.62em;
   padding: 1em 0;
   color: rgb(51, 61, 75);
+}
+.plan-wrapper .product__plan .price-plan {
+  display: initial;
 }
 
 .plans__option {

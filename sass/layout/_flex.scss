@@ -356,7 +356,7 @@
         }
         &--title{
             color:$product-heading-color;
-
+            padding: 1em 0;
           
         }
         &--description{
@@ -366,7 +366,13 @@
             color:$product-heading-color;
         }
 
+        .price-plan{
+            display: initial;
+            
+        }
+
     }
+   
 }
 .plans__option {
   display: flex;

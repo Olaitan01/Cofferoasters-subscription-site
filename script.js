@@ -10,8 +10,17 @@ const headerTop=document.querySelector(".header-top")
 const planBtn=document.querySelectorAll(".steps__title")
 const plansWrapper=document.querySelectorAll(".plan-option-container")
 const plansOption=document.querySelectorAll(".product__plan")
-const arrowIcon=document.querySelectorAll(".arrow-icon")
+const arrowIcon=document.querySelectorAll(".arrow-icon")                    
 const indicator=document.querySelectorAll(".indicator")
+let planCards=document.getElementsByClassName("product__plan")
+let brewedTypes=document.getElementsByClassName("brewed-type")
+let coffeeTypes=document.querySelectorAll(".coffee-type")
+let coffeeQuantity=document.getElementsByClassName("coffee-quantity")
+let coffeeProcess=document.getElementsByClassName("coffee-process")
+let coffeeDelivery=document.getElementsByClassName("coffee-delivery")
+
+
+
 //FONT COLOR CHANGES WHEN THE LIGHTS ARE TOGGLED
 function navLinkColor(){
     for(let i=0;i<navLink.length;i++){
@@ -40,6 +49,8 @@ function navLinkColor(){
 
 
 
+
+//Change Paragraph color to a complementing color when light/dark mode us toggled
 function paragraphColor(){
     for(let i=0;i<paragraph.length;i++){
         if(lightToggle.style.display=="block"){
@@ -53,7 +64,7 @@ function paragraphColor(){
         }
     }
 }
-// header bg
+// header Background
 function headerBg(){
     if(lightToggle.style.display=="block"){
         active.style.background="rgb(14,135,132)"
@@ -125,3 +136,6 @@ for(let i=0;i<planBtn.length;i++){
     }
    })
 }
+
+
+// Select a card for each choice
