@@ -392,6 +392,40 @@
   line-height: 1.62em;
 }
 
+.footer-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgb(40, 47, 56);
+  margin: 10em 0 5em;
+  padding: 3em 4em;
+}
+.footer-wrapper .footer__nav-list,
+.footer-wrapper .footer-socials {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.footer-wrapper .footer__nav-list li,
+.footer-wrapper .footer-socials li {
+  list-style-type: none;
+  padding-left: 1em;
+}
+.footer-wrapper .footer__nav-list a,
+.footer-wrapper .footer-socials a {
+  color: rgb(187, 185, 183);
+  text-decoration: none;
+}
+.footer-wrapper .footer__nav-list a:hover,
+.footer-wrapper .footer-socials a:hover {
+  color: rgb(253, 214, 186);
+  transition: color 0.5s ease-in-out;
+}
+.footer-wrapper .footer__nav-list .social:hover,
+.footer-wrapper .footer-socials .social:hover {
+  stroke: rgb(253, 214, 186);
+}
+
 .steps {
   display: flex;
   justify-content: space-between;
@@ -460,6 +494,20 @@
 .steps .summary .style {
   color: rgb(14, 135, 132);
 }
+.steps .create-btn {
+  font-size: 1.2rem;
+  font-family: "Fraunces", serif;
+  font-weight: 700;
+  color: rgb(254, 252, 247);
+  background-color: rgb(14, 135, 132);
+  padding: 1em 1.5em;
+  border-radius: 0.5em;
+  border: none;
+  outline: none;
+  margin-top: 1.5em;
+  display: flex;
+  align-self: self-end;
+}
 
 .plan-option-container {
   display: flex;
@@ -515,6 +563,76 @@
   width: 100%;
   cursor: pointer;
 }
+
+.modal-container {
+  display: none;
+}
+
+.modal {
+  position: absolute;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  padding: 3em 0;
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+}
+
+.modal-summary {
+  width: 35%;
+  margin: auto;
+  background-color: rgb(254, 252, 247);
+  border-radius: 0.5em;
+  position: fixed;
+}
+.modal-summary__header {
+  text-align: center;
+  background-color: rgb(51, 61, 75);
+  padding: 1.5em 0;
+  font-size: 2rem;
+  font-family: "Fraunces", serif;
+  font-weight: 900;
+  color: rgb(254, 252, 247);
+  font-weight: 900;
+  border-radius: 0.2em 0.2em 0 0;
+}
+.modal-summary__paragraph, .modal-summary__total {
+  padding: 2em 7em;
+  color: rgb(51, 61, 75);
+}
+.modal-summary__paragraph .final-order-summary, .modal-summary__total .final-order-summary {
+  font-size: 1.5rem;
+  font-weight: 900;
+  font-family: "Fraunces", serif;
+  padding: 0.5em 0;
+}
+.modal-summary__total {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.modal-summary__total .total {
+  font-size: 1.5rem;
+  font-family: "Fraunces", serif;
+  font-weight: 900;
+  color: 4.5rem;
+}
+.modal-summary__total .checkout-btn {
+  font-size: 1.2rem;
+  font-family: "Fraunces", serif;
+  font-weight: 700;
+  color: rgb(254, 252, 247);
+  background-color: rgb(14, 135, 132);
+  padding: 1em 1.5em;
+  border-radius: 0.5em;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
 @keyframes fade {
   0% {
     height: 0;
@@ -523,40 +641,6 @@
     height: 30vh;
   }
 }
-.footer-wrapper {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: rgb(40, 47, 56);
-  margin: 10em 0 5em;
-  padding: 3em 4em;
-}
-.footer-wrapper .footer__nav-list,
-.footer-wrapper .footer-socials {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-.footer-wrapper .footer__nav-list li,
-.footer-wrapper .footer-socials li {
-  list-style-type: none;
-  padding-left: 1em;
-}
-.footer-wrapper .footer__nav-list a,
-.footer-wrapper .footer-socials a {
-  color: rgb(187, 185, 183);
-  text-decoration: none;
-}
-.footer-wrapper .footer__nav-list a:hover,
-.footer-wrapper .footer-socials a:hover {
-  color: rgb(253, 214, 186);
-  transition: color 0.5s ease-in-out;
-}
-.footer-wrapper .footer__nav-list .social:hover,
-.footer-wrapper .footer-socials .social:hover {
-  stroke: rgb(253, 214, 186);
-}
-
 *, *::after, *::before {
   box-sizing: border-box;
   scroll-behavior: smooth;
@@ -573,6 +657,7 @@ body {
   justify-content: center;
   align-items: center;
   height: 100%;
+  position: relative;
 }
 
 img {

@@ -109,7 +109,7 @@
               <p>03</p>
            <p >Quantity</p>
             </span>
-            <span class="steps__track indicator">
+            <span class="steps__track indicator grind-indicator">
              <p>04</p>
            <p class="p">Grind Option</p>
             </span>
@@ -172,22 +172,22 @@
           </div>
           <div class="plan-option-container">
             <div class="plan-wrapper">
-              <div class="product__plan ">
-                <h2  class="product__plan--title coffee-quantity">250g</h2>
+              <div class="product__plan grams">
+                <h2  class="product__plan--title coffee-quantity ">250g</h2>
                 <p  class="product__plan--description">Perfect for the solo drinker. Yield about 12 delicious cups.</p>
               </div>
-              <div class="product__plan ">
+              <div class="product__plan grams ">
                 <h2  class="product__plan--title coffee-quantity">500g</h2>
                 <p  class="product__plan--description">Perfect option for a couple. Yields about 40 delectable cups.</p>
               </div>
-              <div class="product__plan ">
+              <div class="product__plan grams">
                 <h2  class="product__plan--title coffee-quantity">1000g</h2>
                 <p  class="product__plan--description">Perfect for offices and events. Yield about 90 delightful cups.</p>
               </div>
             </div>
           </div>
          </div>
-         <div class="steps__track plans__option">
+         <div class="steps__track plans__option grinding">
           <div class="steps__title">
             <h1>Want us to grind them?</h1>
             <img src="images/icon-arrow.20551347.svg" alt="arow icon" class="arrow-icon">
@@ -221,30 +221,57 @@
           <div class="plan-wrapper">
             <div class="product__plan ">
               <h2  class="product__plan--title coffee-delivery">Every week</h2>
-              <p  class="product__plan--description price-plan"><span class="price">$7.20</span> per shipment. Includes free first-class shipping</p>
+              <p  class="product__plan--description price-plan"><span class="weekly-price price">$7.20</span> per shipment. Includes free first-class shipping</p>
             </div>
             <div class="product__plan ">
               <h2  class="product__plan--title coffee-delivery">Every 2 week</h2>
-              <p class="product__plan--description price-plan"><span id="price">$9.60</span> per shipment. Includes free priority shipping.</p>
+              <p class="product__plan--description price-plan"><span class="bi-weekly-price price">$9.60</span> per shipment. Includes free priority shipping.</p>
             </div>
             <div class="product__plan ">
               <h2 class="product__plan--title coffee-delivery">Every month</h2>
-              <p class="product__plan--description price-plan"><span id="price">$12.00</span> per shipment includes free priority shipping</p>
+              <p class="product__plan--description price-plan"><span class="monthly-price price">$12.00</span> per shipment. Includes free priority shipping.</p>
             </div>
           </div>
         </div>
           <div class="summary">
             <h1 class="summary__title">ORDER SUMMARY</h1>
-          <p>
-            “I drink my coffee as <span class="drink-style style">_____</span>, with a <span class="type style"> _____</span> type
-            of bean. <span class="quantity style">_____</span>  ground ala <span class="grind style">_____</span> , sent to me <span class="delivery  style">_____</span>.”</span>
+          <p class="order-summary">
+            “I drink my coffee as <span class="drink-style style" aria-required="">_____</span>, with a <span class="type style" aria-required="true"> _____</span> type
+            of bean. <span class="quantity style" aria-required="">_____</span>  <span class="ground">ground ala <span class="grind style" aria-required="true">_____</span> </span>, sent to me <span class="delivery  style" aria-relevant="">_____</span>.”</span>
           </p>
           </div>
-         
+          <button class="create-btn create-plan">Create your plan</button>
          </div>
 
           </div>
 
+        </section>
+        <section class="modal-container">
+       <div class="modal">
+        <div class="modal-summary">
+          <div class="modal-summary__header">
+            <h1>Order Summary</h1>
+          </div>
+          <div class="modal-summary__paragraph">
+            <p class="final-order-summary">“I drink my coffee using Capsule,
+               with a 
+              Decaf type of bean. 1000g , sent to me Every 2 weeks.”</p>
+            <p class="order-confirmation">Is this correct? You can proceed to checkout
+               or go back to plan selection if something is off. Subscription discount 
+              codes can also be redeemed at the checkout.</p>
+          </div>
+          <div class="modal-summary__total">
+            <div >
+            <p class="total">$64.00 / mo</p>
+            </div>
+            <a href="index.html">
+              <div>
+                <button class="checkout-btn"> Checkout </button>
+              </div>
+            </a>
+          </div>
+        </div>
+       </div>
         </section>
         
       </main>

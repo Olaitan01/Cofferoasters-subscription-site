@@ -1,0 +1,229 @@
+@use "../abstracts/mixins" as *;
+@use "../abstracts/variables" as *;
+@use "../base/typography" as *;
+
+
+//Create Plans Styling
+
+.steps {
+    @include flex;
+    justify-content: space-between;
+  //   outline: 0.1em dashed red;
+    width: 85%;
+    margin: auto;
+    &-indicator {
+      align-self: baseline;
+    }
+    &__track {
+      @include flex;
+      font-family: $heading-font-family;
+      font-size: 1.5rem;
+      font-weight: $heading-font-weight;
+      color: $paragraph-color;
+  
+      .num {
+        color: $cards-color;
+      }
+    }
+    &__title {
+      @include flex;
+      // border: 0.1em solid red;
+      align-self: self-end;
+      padding: 1em 0;
+      width: 80%;
+  
+      .arrow-icon{
+          transition: transform .5s ease-in-out;
+      }
+    }
+  
+    .indicator {
+      padding: 1em 0;
+      position: relative;
+      width: 120%;
+  
+      &::after {
+        content: "";
+        border-bottom: 0.05em solid $paragraph-color;
+        position: absolute;
+        flex-direction: column;
+        width: 100%;
+        display: block;
+        height: 0.5em;
+        bottom: 0;
+      }
+    }
+    .summary {
+      // border: 0.1em solid green;
+      width: 80%;
+      align-self: flex-end;
+      padding: 3em;
+      color: $heading-color;
+      background: url(/images/bg-order-summary.bc8b393f.png);
+      background-size: cover;
+      background-repeat: no-repeat;
+      border-radius: 0.5em;
+      &__title {
+        font-size: 1rem;
+        font-family: $global-font-family;
+        font-weight: $paragraph-font-weight;
+        line-height: $heading-line-height;
+  
+      }
+     
+      
+      .style{
+          color: $cards-color;
+      }
+    }
+    .create-btn{
+      @include btn;
+      margin-top: 1.5em;
+      display: flex;
+      align-self: self-end;
+    }
+  }
+  .plan-option-container{
+      // border: .1em solid yellow;
+      display: flex;
+      justify-content: right;
+      width: 80%;
+      align-self: flex-end;
+      display: none;
+      animation: fade 1s ease-in-out;
+      transition: height 0.5s ease-in-out
+  }
+  .plan-wrapper{
+      @include flex;
+      font-size: 1rem;
+      width: 100%;
+      align-items: end;
+  
+      .product__plan{
+          // border: .1em solid red;
+          width: 50%;
+          padding: 2em 1em 3em;
+          margin: 1em;
+          border-radius: .5em;
+          background-color: $plan-card;
+          transition: background-color .2s ease-in-out;
+          
+          
+          &:hover{
+              background-color: $number-color;
+          }
+          
+          &--title{
+              color:$product-heading-color;
+              padding: 1em 0;
+            
+          }
+          &--description{
+              font-family: $global-font-family;
+              @include paragrph-txt;
+              padding: 1em 0;
+              color:$product-heading-color;
+          }
+  
+          .price-plan{
+              display: initial;
+              
+          }
+  
+      }
+      
+     
+  }
+  .plans__option {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    cursor: pointer;
+    
+  }
+
+  //MODAL STYLING
+  .modal-container{
+    display: none;
+  }
+  .modal{
+    position: absolute;
+    width: 100%;
+    background-color: rgba($color: #000000, $alpha: .5);
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    padding: 3em 0;
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+    
+  }
+  .modal-summary{
+    width: 35%;
+    margin: auto;
+    background-color: $bg-light-theme;
+    border-radius: .5em;
+    position: fixed;
+    &__header{
+        text-align: center;
+        background-color: $bg-dark-theme;
+        padding: 1.5em 0;
+        font-size:2rem;
+        font-family: $heading-font-family;
+        font-weight: $heading-font-weight;
+        color: $heading-color;
+        font-weight: $heading-font-weight;
+        border-radius: .2em .2em 0 0
+    }
+    &__paragraph,&__total{
+        padding: 2em 7em;
+        color: $product-heading-color;
+        
+
+        .final-order-summary{
+            font-size: 1.5rem;
+            font-weight: $heading-font-weight;
+            font-family: $heading-font-family;
+            padding: .5em 0
+        }
+
+    }
+    &__total{
+        @include flex;
+        
+        .total{
+            font-size: $product-heading-size;
+            font-family: $heading-font-family;
+            font-weight: $heading-font-weight;
+            color: $heading-font-size;
+        }
+        .checkout-btn{
+            @include btn;
+            cursor: pointer;
+        }
+    }
+    
+
+  }
+
+  @-webkit-keyframes fade{
+    0%{
+     height: 0;
+     opacity: .5;
+    }
+    100%{
+        height: 100vh;
+        opacity: 1;
+    }
+}
+@keyframes fade{
+    0%{
+        height: 0;
+       }
+       100%{
+           height: 30vh;
+       }
+     
+}
