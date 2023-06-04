@@ -16,6 +16,7 @@ const createPlanBtn=document.querySelector(".create-plan")
 const summaryModal=document.querySelector(".modal-container")
 const orderSummary=document.querySelector(".order-summary")
 const finalOrderSummary=document.querySelector(".final-order-summary")
+let total=document.querySelector(".total")
 let planCards = document.getElementsByClassName("product__plan");
 let brewedTypes = document.getElementsByClassName("brewed-type");
 let coffeeTypes = document.querySelectorAll(".coffee-type");
@@ -62,6 +63,7 @@ function paragraphColor() {
     } else {
       heading[i].style.color = "rgb(51,61,75)";
       paragraph[i].style.color = "rgb(51,61,75)";
+      
     }
   }
 }
@@ -80,10 +82,12 @@ toggleBtn.addEventListener("click", () => {
     darkToggle.style.display = "block";
     lightToggle.style.display = "none";
     body.style.background = "rgb(254,252,247)";
+    
   } else {
     darkToggle.style.display = "none";
     lightToggle.style.display = "block";
     body.style.background = "rgb(51,61,75)";
+   
   }
   navLinkColor();
   paragraphColor();
@@ -132,11 +136,13 @@ for (let i = 0; i < planBtn.length; i++) {
   });
 }
 
+
 // SELECT A CARD FOR EACH OPTIONS
 
 for (let i = 0; i < planCards.length; i++) {
   let title = planCards[i].querySelector(".product__plan--title").innerText;
   planCards[i].addEventListener("click", () => {
+    planCards[i].style.background="rgb(14,135,132)"
     if (
       planCards[i]
         .querySelector(".product__plan--title")
@@ -207,6 +213,7 @@ for(let i=0;i<grams.length;i++){
     })
 }
 
+
 //CREATE PLAN
 createPlanBtn.addEventListener("click",()=>{
   if(summaryModal.style.display=="block"){
@@ -216,5 +223,31 @@ createPlanBtn.addEventListener("click",()=>{
     finalOrderSummary.innerText=orderSummary.innerText
     finalOrderSummary.classList.add("style")
   }
-
+priceTotal()
 })
+
+
+//ADJUST TOTAL PRICE ACCORDING TO THE PRICES IN THE PLAN PACKAGE
+const price=document.getElementsByClassName("price")
+function priceTotal(){
+    for(let i=0;i<price.length;i++){
+      if(document.querySelector(".delivery").innerText=="Every week"){
+        let priceEl=price[0].innerText
+        total.innerText=`$${parseInt(priceEl.replace("$",""))*4} / mo`
+        
+       
+       }else if(document.querySelector(".delivery").innerText=="Every 2 week"){
+        let priceEl=price[1].innerText
+        total.innerText=`$${parseInt(priceEl.replace("$",""))*2} / mo`
+        
+         
+       }else{
+        let priceEl=price[2].innerText
+        total.innerText=`$${parseInt(priceEl.replace("$",""))*1} / mo`
+        
+       }
+    }
+    
+    
+  
+}

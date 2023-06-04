@@ -37,8 +37,8 @@
       .product-description {
         width: 80%;
         margin: auto;
-        font-size: $paragraph-color;
-        color: $paragraph-color;
+        font-size: $paragraph-font-size;
+        color: $product-heading-color;
         font-weight: $paragraph-font-weight;
         line-height: $paragraph-line-height;
       }
@@ -146,6 +146,7 @@
     @include paragrph-txt;
     width: 76.8%;
     padding-bottom: 5em;
+    color: $product-heading-color
   }
 
   .create-btn {
@@ -199,6 +200,7 @@
     @include paragrph-txt;
     display: flex;
     flex-direction: column;
+    color: $product-heading-color;
   }
 }
 
@@ -249,6 +251,7 @@
     }
     .address {
       @include paragrph-txt;
+      color: $product-heading-color;
     }
   }
 }

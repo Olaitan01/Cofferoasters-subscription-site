@@ -130,8 +130,8 @@
 .collection__products-list__description .product-description {
   width: 80%;
   margin: auto;
-  font-size: rgb(187, 185, 183);
-  color: rgb(187, 185, 183);
+  font-size: 1rem;
+  color: rgb(51, 61, 75);
   font-weight: 400;
   line-height: 1.62em;
 }
@@ -253,6 +253,7 @@
   line-height: 1.62em;
   width: 76.8%;
   padding-bottom: 5em;
+  color: rgb(51, 61, 75);
 }
 .works .create-btn {
   font-size: 1.2rem;
@@ -320,6 +321,7 @@
   line-height: 1.62em;
   display: flex;
   flex-direction: column;
+  color: rgb(51, 61, 75);
 }
 
 .quality-wrapper {
@@ -390,6 +392,7 @@
   color: rgb(187, 185, 183);
   font-weight: 400;
   line-height: 1.62em;
+  color: rgb(51, 61, 75);
 }
 
 .footer-wrapper {
@@ -424,6 +427,15 @@
 .footer-wrapper .footer__nav-list .social:hover,
 .footer-wrapper .footer-socials .social:hover {
   stroke: rgb(253, 214, 186);
+}
+
+.works__paragraph {
+  display: flex;
+  flex-direction: column;
+  font-size: 1rem;
+  color: rgb(187, 185, 183);
+  font-weight: 400;
+  line-height: 1.62em;
 }
 
 .steps {

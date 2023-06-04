@@ -3,6 +3,12 @@
 @use "../base/typography" as *;
 
 
+
+//WORKS PARAGRAPH
+.works__paragraph{
+    @include paragrph-txt;
+    
+}
 //Create Plans Styling
 
 .steps {
